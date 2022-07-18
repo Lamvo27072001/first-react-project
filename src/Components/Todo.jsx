@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import TodoForm from './TodoForm'
-// import {RicloseCircleLine} from 'react-icons/ri'
-// import {TiEdit} from 'react-icons/ti'
+ import {AiFillCloseCircle} from 'react-icons/ai'
+ import {TiEdit} from 'react-icons/ti'
 
 
 
@@ -11,15 +11,15 @@ function Todo({todos, completeTodo}) {
         value: ''
     })
 
-  return todos.map((todo,index) => {
-    <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
+  return todos.map((todo,index) => (
+      <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
         <div key={todo.id} onClick={()=> completeTodo(todo.id)}>{todo.text}</div>
         <div className='icons'>
-            {/* <RicloseCircleLine/>
-            <TiEdit/> */}
+            <AiFillCloseCircle/>
+            <TiEdit/>
         </div>
     </div>
-  })
+  ))
     
   
 }
